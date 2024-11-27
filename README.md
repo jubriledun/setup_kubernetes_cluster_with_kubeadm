@@ -246,6 +246,9 @@ Confirm application is running <br> <br>
 Voila!!! QED!!!
 
 
+<!-- https://devopscube.com/setup-kubernetes-cluster-kubeadm/  blog used for this lab -->
+
+
 
 
 
