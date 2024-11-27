@@ -148,6 +148,22 @@ kubectl get po -n kube-system
 ```
 ![image](https://github.com/user-attachments/assets/8f2ac928-e827-4bf0-8a3c-c5ec357eff4f) <br>
 
+## Step 6: Join Worker nodes to the control plane
+```
+kubeadm token create --print-join-command
+```
+execute the following command in the master node to recreate the token with the join command the run the output command in the worker nodes <br>
+![image](https://github.com/user-attachments/assets/0a68891a-aec6-4b5f-912a-3b99ce0f8c4c) <br>
+
+worker node 1 <br>
+![image](https://github.com/user-attachments/assets/e70de57f-607c-4bc3-a8c2-14996ad5379d) <br>
+
+worker node 2 <br>
+![image](https://github.com/user-attachments/assets/2160e4dd-39a3-4a46-a3d9-8252fe7a52a7) <br>
+
+
+
+
 
 
 
