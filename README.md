@@ -7,6 +7,18 @@ In this hands-on lab we will practice the process of building a multi-node Kuber
 - [What is Kubeadm](#what-is-kubeadm)
 - [How Kubeadm works](#how-kubeadm-works)
 - [Implementation](#implementation)
+  - [Setup Overview](#setup-overview)
+  - [Step 1: Deploy EC2 instances and Configure Security groups](#step1-deploy-ec2-instances-and-configure-security-groups)
+  - [Step 2: Enable iptables bridged traffic on all the nodes](#step-2-enable-iptables-bridged-traffic-on-all-the-nodes)
+  - [Step 3: Disable swap on all the Nodes](#step-3-disable-swap-on-all-the-nodes)
+  - [Step 4: Install Cri-O Runtime on all the nodes](#step-4-install-cri-o-runtime-on-all-the-nodes)
+  - [Step 5: Install kubeadm, kubelet and kubectl on all nodes](#step-5-install-kubeadm-kubelet-and-kubectl-on-all-nodes)
+  - [Step 6: Initialize Kubeadm control plane configuration on the master node to setup control plane](#step-6-initialize-kubeadm-control-plane-configuration-on-the-master-node-to-setup-control-plane)
+  - [Step 7: Join Worker nodes to the control plane](#step-7-join-worker-nodes-to-the-control-plane)
+  - [Step 8: Install Calico Networking Plugin for Pod Networking](#step-8-install-calico-networking-plugin-for-pod-networking)
+  - [Step 9: Setup Kubernetes Metrics Server](#step-9-setup-kubernetes-metrics-server)
+  - [Step 10: Deploy sample nginx application](#step-10-deploy-sample-nginx-application)
+
 
 ## Objective
 To gain deep understanding of the various components that make up a kubernetes cluster <br>
