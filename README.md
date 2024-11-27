@@ -54,9 +54,37 @@ When you initialise kubeadm, first it runs all the preflight checks to validate 
 - Validate all cluster components and nodes
 - Deploy sanple nginx app and validate the cluster
 
-## Deploy EC2 instances and Configure Security groups
+## Step1: Deploy EC2 instances and Configure Security groups
 ![image](https://github.com/user-attachments/assets/070767b8-9f08-4732-9ae8-91b85f8b21e1) <br>
 ![image](https://github.com/user-attachments/assets/4e76d109-987e-4ecb-9bad-48dd258d7055) <br>
+
+## Step 2: Enable iptables bridged traffic on all the nodes
+```
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+
+sudo modprobe overlay
+sudo modprobe br_netfilter
+
+# sysctl params required by setup, params persist across reboots
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF
+
+# Apply sysctl params without reboot
+sudo sysctl --system
+```
+
+## Step 3: Disable swap on all the Nodes
+```
+sudo swapoff -a
+(crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
+```
+
 
 
 
