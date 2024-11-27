@@ -165,6 +165,8 @@ run ``` kubectl get nodes ``` in the control plane node to confirm the worker no
 ![image](https://github.com/user-attachments/assets/adac6589-8c89-4c4b-bdd5-61851e353170) <br>
 
 ## Install Calico Networking Plugin for Pod Networking
+![image](https://github.com/user-attachments/assets/f99793cb-79e7-4872-b004-2c32990ec919) <br>
+
 
 
 
