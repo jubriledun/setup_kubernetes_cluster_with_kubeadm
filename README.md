@@ -47,7 +47,7 @@ When you initialise kubeadm, first it runs all the preflight checks to validate 
 - Deploy 3 EC2 instances and configure required security group rules.
 - Install container runtime on all the instances. We'll be using Cri-O.
 - Install Kubeadm, Kubelet and Kubectl on all the instances.
-- Initiate Kubeadm control plane configuration on the master node.
+- Initialize Kubeadm control plane configuration on the master node.
 - Join the worker node to the control plane.
 - Install the calico network plugin to enable pod networking.
 - Install Kubernetes metric server to enable pod and node metrics.
@@ -121,6 +121,15 @@ sudo apt-get update -y
 ```
 ```
 sudo apt-get install -y kubelet kubeadm kubectl
+```
+## Step 7: Initialize Kubeadm control plane configuration on the master node to setup control plane
+```
+IPADDR=$(curl ifconfig.me && echo "")
+NODENAME=$(hostname -s)
+POD_CIDR="192.168.0.0/16"
+```
+```
+sudo kubeadm init --control-plane-endpoint=$IPADDR  --apiserver-cert-extra-sans=$IPADDR  --pod-network-cidr=$POD_CIDR --node-name $NODENAME --ignore-preflight-errors Swap
 ```
 
 
