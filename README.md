@@ -120,7 +120,7 @@ echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 sudo apt-get update -y
 ```
 ```
-sudo apt-get install -y kubelet=1.30.0-1.1 kubectl=1.30.0-1.1 kubeadm=1.30.0-1.1
+sudo apt-get install -y kubelet kubeadm kubectl
 ```
 
 
