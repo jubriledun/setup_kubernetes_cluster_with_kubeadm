@@ -23,6 +23,9 @@ A controller is a process that continuously monitors the state of various compon
 Kube Scheduler <br>
 Responsible for deciding which pod goes on which node depending on certain criteria. It doesn’t actually place the pods on the nodes, that’s the job of the kubelet. <br>
 
+Kubelet <br>
+An agent that runs on each worker node, ensuring containers are running as defined. It manages communication between the node and the cluster control plane. <br>
+
 
 
 
