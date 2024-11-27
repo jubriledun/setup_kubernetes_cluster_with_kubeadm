@@ -215,11 +215,14 @@ spec:
       nodePort: 32000
 EOF
 ```
-check the pod status using the following command
+check the pod status using the following command <br>
 ``` kubectl get pods ```
-![image](https://github.com/user-attachments/assets/1341694a-1591-4d3d-9747-70a06ebf8e92)
+![image](https://github.com/user-attachments/assets/1341694a-1591-4d3d-9747-70a06ebf8e92) <br>
 
-Confirm application is running
+Confirm application is running <br>
+![image](https://github.com/user-attachments/assets/b5a19dde-7b60-4f13-a48b-74d0d726bc1d) <br>
+
+Voila!!! QED!!!
 
 
 
