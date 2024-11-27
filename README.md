@@ -1,5 +1,5 @@
 # setup_kubernetes_cluster_with_kubeadm
-In this simple hands-on lab we will practice the process of building a multi-node Kubernetes cluster. We'll use three EC2 instances on AWS to setup the cluster consisting of one control plane node and two worker nodes. <br>
+In this hands-on lab we will practice the process of building a multi-node Kubernetes cluster. We'll use three EC2 instances on AWS to setup the cluster consisting of one control plane node and two worker nodes. <br>
 
 ## Objective
 To gain deep understanding of the various components that make up a kubernetes cluster <br>
