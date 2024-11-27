@@ -26,6 +26,8 @@ Responsible for deciding which pod goes on which node depending on certain crite
 Kubelet <br>
 An agent that runs on each worker node, ensuring containers are running as defined. It manages communication between the node and the cluster control plane. <br>
 
+Kube-proxy <br>
+Kubernetes component that runs on every node in the cluster and is responsible for managing network communication between pods, services, and external clients. <br>
 
 
 
