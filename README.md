@@ -161,6 +161,12 @@ worker node 1 <br>
 worker node 2 <br>
 ![image](https://github.com/user-attachments/assets/2160e4dd-39a3-4a46-a3d9-8252fe7a52a7) <br>
 
+run ``` kubectl get nodes ``` in the control plane node to confirm the worker nodes have successfully joined
+![image](https://github.com/user-attachments/assets/adac6589-8c89-4c4b-bdd5-61851e353170) <br>
+
+## Install Calico Networking Plugin for Pod Networking
+
+
 
 
 
