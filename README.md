@@ -142,6 +142,12 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
+verify the kubeconfig by executing the following kubectl command to list all the pods in the kube-system namespace.
+```
+kubectl get po -n kube-system
+```
+![image](https://github.com/user-attachments/assets/8f2ac928-e827-4bf0-8a3c-c5ec357eff4f) <br>
+
 
 
 
