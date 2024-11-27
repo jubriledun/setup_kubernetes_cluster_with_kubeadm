@@ -63,7 +63,8 @@ When you initialise kubeadm, first it runs all the preflight checks to validate 
 
 ## Step1: Deploy EC2 instances and Configure Security groups
 ![image](https://github.com/user-attachments/assets/070767b8-9f08-4732-9ae8-91b85f8b21e1) <br>
-![image](https://github.com/user-attachments/assets/4e76d109-987e-4ecb-9bad-48dd258d7055) <br>
+![image](https://github.com/user-attachments/assets/4e76d109-987e-4ecb-9bad-48dd258d7055) <br> <br>
+
 
 ## Step 2: Enable iptables bridged traffic on all the nodes
 ```
@@ -85,6 +86,15 @@ EOF
 # Apply sysctl params without reboot
 sudo sysctl --system
 ```
+    These steps configure kernel settings to allow Kubernetes networking and container traffic to function correctly:
+    
+    - Enable IPTables for Bridged Traffic: Kubernetes uses iptables for network rules, including pod communication.
+    - br_netfilter ensures that bridged network traffic (used by containers) is visible to iptables, enabling proper packet filtering and routing.
+    - Enable IP Forwarding: The setting net.ipv4.ip_forward=1 allows traffic forwarding between different network interfaces. This is essential for pod-to-pod and pod-to-external 
+      communication.
+    - Persist and Apply Settings: The configuration ensures these settings persist across reboots and are applied immediately without requiring a system restart.
+    
+    These tweaks are vital for Kubernetes to manage networking and traffic routing effectively.
 
 ## Step 3: Disable swap on all the Nodes
 ```
