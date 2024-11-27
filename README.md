@@ -174,7 +174,7 @@ kubectl apply -f https://raw.githubusercontent.com/techiescamp/kubeadm-scripts/m
 ```
 
 ## Step 10: Deploy sample nginx application
-create nginx deployment. <br>
+create nginx deployment. <br> <br>
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: apps/v1
@@ -198,7 +198,7 @@ spec:
         - containerPort: 80      
 EOF
 ```
-expose the Nginx deployment on a NodePort 32000 <br>
+expose the Nginx deployment on a NodePort 32000 <br> <br>
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
@@ -215,12 +215,12 @@ spec:
       nodePort: 32000
 EOF
 ```
-check the pod status using the following command <br>
+check the pod status using the following command <br> <br>
 ``` kubectl get pods ```
-![image](https://github.com/user-attachments/assets/1341694a-1591-4d3d-9747-70a06ebf8e92) <br>
+![image](https://github.com/user-attachments/assets/1341694a-1591-4d3d-9747-70a06ebf8e92) <br> <br>
 
-Confirm application is running <br>
-![image](https://github.com/user-attachments/assets/b5a19dde-7b60-4f13-a48b-74d0d726bc1d) <br>
+Confirm application is running <br> <br>
+![image](https://github.com/user-attachments/assets/b5a19dde-7b60-4f13-a48b-74d0d726bc1d) <br> <br>
 
 Voila!!! QED!!!
 
