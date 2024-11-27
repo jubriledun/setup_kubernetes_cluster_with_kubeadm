@@ -103,6 +103,7 @@ sudo swapoff -a
 (crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
 ```
 ## Step 4: Install Cri-O Runtime on all the nodes
+Install container runtime of choice, we'll install Cri-O for this hands-on also a CLI utility will be installed to interact with the containers created by the container runtime. <br>
 ```
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/deb/Release.key | \
