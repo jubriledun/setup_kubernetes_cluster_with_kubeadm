@@ -173,7 +173,7 @@ kubectl get po -n kube-system
 ```
 kubeadm token create --print-join-command
 ```
-execute the following command in the master node to recreate the token with the join command the run the output command in the worker nodes <br>
+execute the following command in the master node to recreate the token with the join command then run the output command in the worker nodes <br>
 ![image](https://github.com/user-attachments/assets/0a68891a-aec6-4b5f-912a-3b99ce0f8c4c) <br>
 
 worker node 1 <br>
