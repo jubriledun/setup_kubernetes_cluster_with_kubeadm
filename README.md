@@ -38,4 +38,4 @@ Software responsible for running containers by managing their lifecycle, includi
 Kubeadm is a tool used to setup kubernetes cluster. It simplifies the process of setting up kubernetes cluster components and follows best practices for cluster configuration. <br>
 
 
-A Kubernetes Cluster needs a Control plane node and at least one Worker node. for this lab, we have three Linux servers. One of the servers will function as the Control plane server(node), and two of the servers will be our Worker node
+A Kubernetes Cluster needs a control plane node and at least one worker node. For this lab, we have three EC2 servers. One of the servers will function as the Control plane node, and two of the servers will be our Worker nodes.
