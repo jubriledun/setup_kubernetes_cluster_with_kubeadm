@@ -86,17 +86,18 @@ sudo swapoff -a
 ```
 ## Step 4: Install Cri-O Runtime on all the nodes
 ```
-sudo apt-get update -y
-sudo apt-get install -y software-properties-common gpg curl apt-transport-https ca-certificates
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/deb/Release.key | \
+    sudo gpg --dearmor -o /etc/apt/keyrings/cri-o-apt-keyring.gpg
+echo "deb [signed-by=/etc/apt/keyrings/cri-o-apt-keyring.gpg] https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/deb/ /" | \
+    sudo tee /etc/apt/sources.list.d/cri-o.list
 
-curl -fsSL https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/deb/Release.key |
-    gpg --dearmor -o /etc/apt/keyrings/cri-o-apt-keyring.gpg
-echo "deb [signed-by=/etc/apt/keyrings/cri-o-apt-keyring.gpg] https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/deb/ /" |
-    tee /etc/apt/sources.list.d/cri-o.list
-
+```
+```
 sudo apt-get update -y
 sudo apt-get install -y cri-o
-
+```
+```
 sudo systemctl daemon-reload
 sudo systemctl enable crio --now
 sudo systemctl start crio.service
@@ -131,5 +132,6 @@ POD_CIDR="192.168.0.0/16"
 ```
 sudo kubeadm init --control-plane-endpoint=$IPADDR  --apiserver-cert-extra-sans=$IPADDR  --pod-network-cidr=$POD_CIDR --node-name $NODENAME --ignore-preflight-errors Swap
 ```
+![image](https://github.com/user-attachments/assets/d32bf3ab-65fe-4a06-a4de-c8ba0a4028bd) <br>
 
 
