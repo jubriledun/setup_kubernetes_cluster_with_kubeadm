@@ -44,7 +44,7 @@ A Kubernetes Cluster needs a control plane node and at least one worker node. Fo
 # Implementation
 
 ## Setup Overview
-- Deploy 3 EC2 instances and configure required secuirty group rules.
+- Deploy 3 EC2 instances and configure required security group rules.
 - Install container runtime on all the instances. We'll be using Crio.
 - Install Kubeadm, Kubelet and Kubectl on all the instances.
 - Initiate Kubeadm control plane configuration on the master node.
