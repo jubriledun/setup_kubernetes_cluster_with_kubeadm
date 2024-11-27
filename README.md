@@ -133,5 +133,15 @@ POD_CIDR="192.168.0.0/16"
 sudo kubeadm init --control-plane-endpoint=$IPADDR  --apiserver-cert-extra-sans=$IPADDR  --pod-network-cidr=$POD_CIDR --node-name $NODENAME --ignore-preflight-errors Swap
 ```
 ![image](https://github.com/user-attachments/assets/d32bf3ab-65fe-4a06-a4de-c8ba0a4028bd) <br>
+![image](https://github.com/user-attachments/assets/7fbe4e30-4cb2-419c-8462-a6e25834135e) <br>
+
+Use the following commands from the output to create the kubeconfig in master so that you can use kubectl to interact with cluster API.
+
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
 
 
