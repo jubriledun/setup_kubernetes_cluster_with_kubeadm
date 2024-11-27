@@ -45,7 +45,7 @@ When you initialise kubeadm, first it runs all the preflight checks to validate 
 
 ## Setup Overview
 - Deploy 3 EC2 instances and configure required security group rules.
-- Install container runtime on all the instances. We'll be using Crio.
+- Install container runtime on all the instances. We'll be using Cri-O.
 - Install Kubeadm, Kubelet and Kubectl on all the instances.
 - Initiate Kubeadm control plane configuration on the master node.
 - Join the worker node to the control plane.
@@ -84,7 +84,23 @@ sudo sysctl --system
 sudo swapoff -a
 (crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
 ```
+## Install Cri-O Runtime on all the nodes
+```
+sudo apt-get update -y
+sudo apt-get install -y software-properties-common gpg curl apt-transport-https ca-certificates
 
+curl -fsSL https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/deb/Release.key |
+    gpg --dearmor -o /etc/apt/keyrings/cri-o-apt-keyring.gpg
+echo "deb [signed-by=/etc/apt/keyrings/cri-o-apt-keyring.gpg] https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/deb/ /" |
+    tee /etc/apt/sources.list.d/cri-o.list
+
+sudo apt-get update -y
+sudo apt-get install -y cri-o
+
+sudo systemctl daemon-reload
+sudo systemctl enable crio --now
+sudo systemctl start crio.service
+```
 
 
 
