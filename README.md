@@ -97,7 +97,7 @@ sudo sysctl --system
     These tweaks are vital for Kubernetes to manage networking and traffic routing effectively.
 
 ## Step 3: Disable swap on all the Nodes
-Disable swapoff on all nodes for kubeadm to work properly. <br>
+Disable swap on all nodes for kubeadm to work properly. <br>
 ```
 sudo swapoff -a
 (crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
