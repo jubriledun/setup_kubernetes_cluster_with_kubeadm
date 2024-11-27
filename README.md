@@ -102,14 +102,14 @@ sudo systemctl daemon-reload
 sudo systemctl enable crio --now
 sudo systemctl start crio.service
 ```
-## Step 5: Install crictl
+install crictl
 ```
 VERSION="v1.30.0"
 wget https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-$VERSION-linux-amd64.tar.gz
 sudo tar zxvf crictl-$VERSION-linux-amd64.tar.gz -C /usr/local/bin
 rm -f crictl-$VERSION-linux-amd64.tar.gz
 ```
-## Step 6: Install kubeadm, kubelet and kubectl on all nodes
+## Step 5: Install kubeadm, kubelet and kubectl on all nodes
 ```
 KUBERNETES_VERSION=1.30
 
@@ -123,7 +123,7 @@ sudo apt-get update -y
 ```
 sudo apt-get install -y kubelet kubeadm kubectl
 ```
-## Step 7: Initialize Kubeadm control plane configuration on the master node to setup control plane
+## Step 6: Initialize Kubeadm control plane configuration on the master node to setup control plane
 ```
 IPADDR=$(curl ifconfig.me && echo "")
 NODENAME=$(hostname -s)
@@ -148,7 +148,7 @@ kubectl get po -n kube-system
 ```
 ![image](https://github.com/user-attachments/assets/8f2ac928-e827-4bf0-8a3c-c5ec357eff4f) <br>
 
-## Step 6: Join Worker nodes to the control plane
+## Step 7: Join Worker nodes to the control plane
 ```
 kubeadm token create --print-join-command
 ```
@@ -164,16 +164,16 @@ worker node 2 <br>
 run ``` kubectl get nodes ``` in the control plane node to confirm the worker nodes have successfully joined
 ![image](https://github.com/user-attachments/assets/adac6589-8c89-4c4b-bdd5-61851e353170) <br>
 
-## Step 7: Install Calico Networking Plugin for Pod Networking
+## Step 8: Install Calico Networking Plugin for Pod Networking
 ``` kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml ```
 ![image](https://github.com/user-attachments/assets/f99793cb-79e7-4872-b004-2c32990ec919) <br>
 
-## Step 8: Setup Kubernetes Metrics Server
+## Step 9: Setup Kubernetes Metrics Server
 ```
 kubectl apply -f https://raw.githubusercontent.com/techiescamp/kubeadm-scripts/main/manifests/metrics-server.yaml
 ```
 
-## Step 9: Deploy sample nginx application
+## Step 10: Deploy sample nginx application
 create nginx deployment. <br>
 ```
 cat <<EOF | kubectl apply -f -
