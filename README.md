@@ -5,7 +5,7 @@ In this simple hands-on lab we will practice the process of building a multi-nod
 To gain deep understanding of the various components that make up a kubernetes cluster <br>
 
 ## Kubernetes Architecture and Components
-![image](https://github.com/user-attachments/assets/cd4b735a-3b92-42e1-97c8-427ae76e80f2) <br>
+![image](https://github.com/user-attachments/assets/7ad98bb6-c269-4b1f-8c7f-fc4146ebeeea) <br>
 
 ETCD <br>
 Etcd is a distributed reliable key-value store that is simple, secure and fast. Etcd stores information regarding the cluster such as the nodes, pods, configs, secrets, accounts, roles, bindings etc. <br>
