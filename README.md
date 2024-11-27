@@ -56,5 +56,7 @@ When you initialise kubeadm, first it runs all the preflight checks to validate 
 
 ## Deploy EC2 instances and Configure Security groups
 ![image](https://github.com/user-attachments/assets/070767b8-9f08-4732-9ae8-91b85f8b21e1) <br>
+![image](https://github.com/user-attachments/assets/4e76d109-987e-4ecb-9bad-48dd258d7055) <br>
+
 
 
