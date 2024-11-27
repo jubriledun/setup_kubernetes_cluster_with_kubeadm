@@ -43,5 +43,16 @@ A Kubernetes Cluster needs a control plane node and at least one worker node. Fo
 
 # Implementation
 
+## Setup Overview
+- Deploy 3 EC2 instances and configure required secuirty group rules.
+- Install container runtime on all the instances. We'll be using Crio.
+- Install Kubeadm, Kubelet and Kubectl on all the instances.
+- Initiate Kubeadm control plane configuration on the master node.
+- Join the worker node to the control plane.
+- Install the calico network plugin to enable pod networking.
+- Install Kubernetes metric server to enable pod and node metrics.
+- Validate all cluster components and nodes
+- Deploy sanple nginx app and validate the cluster
+
 ## Create the EC2 instances
 
