@@ -54,5 +54,5 @@ When you initialise kubeadm, first it runs all the preflight checks to validate 
 - Validate all cluster components and nodes
 - Deploy sanple nginx app and validate the cluster
 
-## Create the EC2 instances
+## Deploy EC2 instances and Configure Security groups
 
