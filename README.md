@@ -84,7 +84,7 @@ sudo sysctl --system
 sudo swapoff -a
 (crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
 ```
-## Install Cri-O Runtime on all the nodes
+## Step 4: Install Cri-O Runtime on all the nodes
 ```
 sudo apt-get update -y
 sudo apt-get install -y software-properties-common gpg curl apt-transport-https ca-certificates
@@ -101,12 +101,20 @@ sudo systemctl daemon-reload
 sudo systemctl enable crio --now
 sudo systemctl start crio.service
 ```
-## Install crictl
+## Step 5: Install crictl
 ```
 VERSION="v1.30.0"
 wget https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/crictl-$VERSION-linux-amd64.tar.gz
 sudo tar zxvf crictl-$VERSION-linux-amd64.tar.gz -C /usr/local/bin
 rm -f crictl-$VERSION-linux-amd64.tar.gz
+```
+## Step 6: Install kubeadm, kubelet and kubectl on all nodes
+```
+KUBERNETES_VERSION=1.30
+
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v$KUBERNETES_VERSION/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v$KUBERNETES_VERSION/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
 
 
