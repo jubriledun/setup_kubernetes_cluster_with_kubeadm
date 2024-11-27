@@ -39,3 +39,9 @@ Kubeadm is a tool used to setup kubernetes cluster. It simplifies the process of
 
 
 A Kubernetes Cluster needs a control plane node and at least one worker node. For this lab, we have three EC2 servers. One of the servers will function as the Control plane node, and two of the servers will be our Worker nodes.
+
+
+# Implementation
+
+## Create the EC2 instances
+
