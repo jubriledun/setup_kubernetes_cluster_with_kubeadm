@@ -35,15 +35,10 @@ Software responsible for running containers by managing their lifecycle, includi
 
 
 ## What is Kubeadm 
-Kubeadm is a tool used to setup kubernetes cluster. It simplifies the process of setting up kubernetes cluster components and follows best practices for cluster configuration. <br>
+Kubeadm is a tool used to setup kubernetes cluster. It simplifies the process of setting up kubernetes cluster components and follows best practices for cluster configuration.
+
 ## How Kubeadm works
-When you initialise kubeadm, first it runs all the preflight checks to validate the system state and it downloads all the required cluster container images from registry.k8s.io container registry. <br> 
-It then generates the required TLS certificates and stores it on the /etc/kubernetes/pki folder. <br>
-Next, it generates all the kubeconfig files for the cluster component in /etc/kubernetes folder. <br>
-It then starts the kubelet service and generates the static pod manifest for all the cluster components and saves it in the /etc/kubernetes/manifests folder. <br>
-Next it starts all the control plane components from the static pod manifests. <br> 
-Then it installs CoreDNS and Kubeproxy components. <br> 
-Finally, it generates node bootstrap token which is used by the worker nodes to join the control plane.
+When you initialise kubeadm, first it runs all the preflight checks to validate the system state and it downloads all the required cluster container images from ```registry.k8s.io```container registry. It then generates the required TLS certificates and stores it on the ```/etc/kubernetes/pki``` folder. Next, it generates all the kubeconfig files for the cluster component in ```/etc/kubernetes``` folder. It then starts the kubelet service and generates the static pod manifest for all the cluster components and saves it in the ```/etc/kubernetes/manifests``` folder. Next it starts all the control plane components from the static pod manifests. Then it installs CoreDNS and Kubeproxy components. Finally, it generates node bootstrap token which is used by the worker nodes to join the control plane.
 
 
 # Implementation
