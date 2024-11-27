@@ -3,7 +3,10 @@ In this hands-on lab we will practice the process of building a multi-node Kuber
 
 # Table of Contents
 - [Objective](#objective)
-- [Kubernetes Architecture and Components](#kubernetes architecture and components)
+- [Kubernetes Architecture and Components](#kubernetes-architecture-and-components)
+- [What is Kubeadm](#what-is-kubeadm)
+- [How Kubeadm works](#how-kubeadm-works)
+- [Implementation](#implementation)
 
 ## Objective
 To gain deep understanding of the various components that make up a kubernetes cluster <br>
